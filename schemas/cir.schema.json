@@ -1,0 +1,381 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wnsdy95.github.io/cxthub/schemas/cir.schema.json",
+  "title": "CIR v1/v2 — Canonical Intermediate Representation",
+  "description": "cxt's provider-independent canonical conversation representation. CIR v2 adds explicit compaction replacement context, Codex multi-agent state, and bounded provider replay metadata; v1 remains readable for rolling upgrades.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["envelope", "events"],
+  "properties": {
+    "envelope": { "$ref": "#/$defs/envelope" },
+    "events": {
+      "type": "array",
+      "description": "Event stream sorted by time (seq sort).",
+      "items": { "$ref": "#/$defs/event" }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "envelope": {
+            "type": "object",
+            "properties": { "cir_version": { "const": "1" } },
+            "required": ["cir_version"]
+          }
+        },
+        "required": ["envelope"]
+      },
+      "then": {
+        "properties": {
+          "events": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/v1Event" }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "providerKind": {
+      "type": "string",
+      "description": "Source or target provider.",
+      "enum": ["claude", "codex", "unknown"]
+    },
+    "fidelityTier": {
+      "type": "string",
+      "description": "Restoration fidelity tier. full=lossless original, reconstructed=cross-provider reconstruction, memory=distilled summary.",
+      "enum": ["full", "reconstructed", "memory"]
+    },
+    "role": {
+      "type": "string",
+      "enum": ["user", "assistant", "system", "developer"]
+    },
+    "providerMetadata": {
+      "type": "object",
+      "description": "CIR v2 provider-local replay metadata. Only explicitly modeled fields are accepted; unknown provider fields make a replacement incomplete.",
+      "additionalProperties": false,
+      "properties": {
+        "turn_id": { "type": "string" },
+        "create_time": { "type": "number" }
+      }
+    },
+    "envelope": {
+      "type": "object",
+      "description": "Session global metadata.",
+      "additionalProperties": false,
+      "required": [
+        "cir_version",
+        "source_provider",
+        "source_model",
+        "captured_at",
+        "cwd",
+        "git_branch",
+        "session_origin_id",
+        "fidelity"
+      ],
+      "properties": {
+        "cir_version": {
+          "type": "string",
+          "enum": ["1", "2"],
+          "description": "CIR schema version. Compaction and multi-agent fields require \"2\"."
+        },
+        "source_provider": { "$ref": "#/$defs/providerKind" },
+        "source_model": {
+          "type": "string",
+          "description": "Source model identifier, for example claude-opus-4-8."
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Capture time (RFC3339)."
+        },
+        "cwd": {
+          "type": "string",
+          "description": "Absolute working directory at capture time."
+        },
+        "git_branch": {
+          "type": "string",
+          "description": "Git branch at capture time. Claude embeds it in the record; Codex is augmented through a gitctx lookup."
+        },
+        "session_origin_id": {
+          "type": "string",
+          "description": "Source session identifier: Claude sessionId or Codex rollout UUID."
+        },
+        "fidelity": { "$ref": "#/$defs/fidelityTier" },
+        "context_tokens": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Context window usage at session end (input+cache_creation+cache_read). Omitted means unobserved in a legacy capture."
+        },
+        "output_tokens": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total assistant output token count for the session. Omitted = unobserved."
+        },
+        "source_models": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "All models seen in the session, in first-appearance order with duplicates removed. source_model is the most recently used representative value."
+        },
+        "compaction_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of provider context compactions observed in this session."
+        }
+      }
+    },
+    "eventBase": {
+      "type": "object",
+      "description": "Common fields for all events.",
+      "required": ["kind", "seq"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["turn", "message", "tool_call", "tool_result", "reasoning", "compaction"]
+        },
+        "id": {
+          "type": "string",
+          "description": "Original identifier or generated ID (optional)."
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Event timestamp (optional)."
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Canonical sort order."
+        },
+        "provider_metadata": {
+          "$ref": "#/$defs/providerMetadata"
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "description": "Event union distinguished by the kind tag.",
+      "unevaluatedProperties": false,
+      "allOf": [{ "$ref": "#/$defs/eventBase" }],
+      "oneOf": [
+        { "$ref": "#/$defs/turnEvent" },
+        { "$ref": "#/$defs/messageEvent" },
+        { "$ref": "#/$defs/toolCallEvent" },
+        { "$ref": "#/$defs/toolResultEvent" },
+        { "$ref": "#/$defs/reasoningEvent" },
+        { "$ref": "#/$defs/compactionEvent" }
+      ]
+    },
+    "v1Event": {
+      "description": "CIR v1 event shape. It explicitly forbids every v2-only field accepted by the general event union.",
+      "allOf": [
+        { "$ref": "#/$defs/event" },
+        {
+          "not": {
+            "anyOf": [
+              { "properties": { "kind": { "const": "compaction" } }, "required": ["kind"] },
+              { "required": ["replacement"] },
+              { "required": ["replacement_complete"] },
+              { "required": ["agent_message"] },
+              { "required": ["agent_author"] },
+              { "required": ["agent_recipient"] },
+              { "required": ["provider_metadata"] },
+              {
+                "allOf": [
+                  { "properties": { "kind": { "const": "message" } }, "required": ["kind"] },
+                  { "required": ["locked"] }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "contentBlock": {
+      "type": "object",
+      "description": "Message content block. CIR v1 standardizes text only.",
+      "additionalProperties": false,
+      "required": ["type", "text"],
+      "properties": {
+        "type": { "type": "string", "const": "text" },
+        "text": { "type": "string" }
+      }
+    },
+    "turnEvent": {
+      "type": "object",
+      "description": "Turn boundary marker (UI and turn metadata).",
+      "properties": {
+        "kind": { "const": "turn" },
+        "role": { "$ref": "#/$defs/role" }
+      },
+      "required": ["kind", "role"]
+    },
+    "messageEvent": {
+      "type": "object",
+      "description": "Natural-language message block.",
+      "properties": {
+        "kind": { "const": "message" },
+        "role": { "$ref": "#/$defs/role" },
+        "blocks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/contentBlock" }
+        },
+        "compact_summary": {
+          "type": "boolean",
+          "description": "Summary message generated by the agent's own context compression (claude isCompactSummary / codex compacted.message) — top-priority Summary source for memorize digest."
+        },
+        "agent_message": {
+          "type": "boolean",
+          "description": "CIR v2 Codex multi-agent message retained as provider active context."
+        },
+        "agent_author": {
+          "type": "string",
+          "description": "Provider-local author identity for a multi-agent message."
+        },
+        "agent_recipient": {
+          "type": "string",
+          "description": "Provider-local recipient identity for a multi-agent message."
+        },
+        "locked": {
+          "$ref": "#/$defs/lockedBlob",
+          "description": "Opaque same-provider state attached to a multi-agent message."
+        }
+      },
+      "required": ["kind", "role", "blocks"],
+      "allOf": [
+        {
+          "if": {
+            "anyOf": [
+              { "required": ["agent_author"] },
+              { "required": ["agent_recipient"] },
+              { "required": ["locked"] }
+            ]
+          },
+          "then": {
+            "properties": { "agent_message": { "const": true } },
+            "required": ["agent_message"]
+          }
+        }
+      ]
+    },
+    "toolCallEvent": {
+      "type": "object",
+      "description": "Tool call normalized from Claude tool_use or Codex function_call, custom_tool_call, and web_search_call.",
+      "properties": {
+        "kind": { "const": "tool_call" },
+        "call_id": {
+          "type": "string",
+          "description": "Tool-call correlation ID used to match the result."
+        },
+        "tool_name": {
+          "type": "string",
+          "description": "Provider-independent canonical tool name. Vocabulary: shell, apply_patch, read_file, list_dir, grep, web_search, update_plan, mcp:<server>:<tool>, unknown:<original-name>."
+        },
+        "provider_tool_name": {
+          "type": "string",
+          "description": "Original provider tool name, for example Claude Bash/Edit or Codex shell/apply_patch."
+        },
+        "input": {
+          "type": "object",
+          "description": "Tool input arguments as a normalized object.",
+          "additionalProperties": true
+        },
+        "status": {
+          "type": "string",
+          "description": "Call status (optional; codex custom_tool_call status, etc.)."
+        }
+      },
+      "required": ["kind", "call_id", "tool_name", "input"]
+    },
+    "toolResultEvent": {
+      "type": "object",
+      "description": "Tool result normalized from Claude tool_result or Codex function_call_output/custom_tool_call_output.",
+      "properties": {
+        "kind": { "const": "tool_result" },
+        "call_id": {
+          "type": "string",
+          "description": "call_id of the corresponding tool_call."
+        },
+        "output": {
+          "description": "Tool output as a string, structured object, or provider content-block array.",
+          "type": ["string", "object", "array"],
+          "additionalProperties": true
+        },
+        "is_error": {
+          "type": "boolean",
+          "description": "Whether the result is an error (optional)."
+        }
+      },
+      "required": ["kind", "call_id", "output"]
+    },
+    "lockedBlob": {
+      "type": "object",
+      "description": "Provider-locked source payload. It cannot be replayed across providers and is preserved without interpretation.",
+      "additionalProperties": false,
+      "required": ["provider", "scheme", "blob"],
+      "properties": {
+        "provider": { "$ref": "#/$defs/providerKind" },
+        "scheme": {
+          "type": "string",
+          "description": "Locking scheme: Claude signature or Codex encrypted_content.",
+          "enum": ["signature", "encrypted_content"]
+        },
+        "blob": {
+          "type": "string",
+          "description": "Opaque original text (signature/encrypted content)."
+        }
+      }
+    },
+    "reasoningEvent": {
+      "type": "object",
+      "description": "Reasoning event normalized from Claude thinking(+signature) or Codex reasoning(encrypted_content). Provider-locked payloads are preserved inertly; plaintext summaries are stored separately.",
+      "properties": {
+        "kind": { "const": "reasoning" },
+        "locked": {
+          "$ref": "#/$defs/lockedBlob",
+          "description": "Optional provider-locked source payload. Reinsert it only when loading into the same provider."
+        },
+        "redacted_summary": {
+          "type": "string",
+          "description": "Plain text summary (optional). Used for cross-provider/memory replay."
+        },
+        "cross_replayable": {
+          "type": "boolean",
+          "description": "Whether the event is replayable across providers. Locked reasoning is always false.",
+          "const": false
+        }
+      },
+      "required": ["kind", "cross_replayable"]
+    },
+    "compactionEvent": {
+      "type": "object",
+      "description": "CIR v2 context compaction boundary or provider-locked active compaction state. Boundary events carry the provider replacement context while the complete archival stream remains outside it.",
+      "properties": {
+        "kind": { "const": "compaction" },
+        "replacement": {
+          "type": "array",
+          "description": "Provider-visible replacement context at this boundary. An empty array is meaningful.",
+          "items": { "$ref": "#/$defs/event" }
+        },
+        "replacement_complete": {
+          "type": "boolean",
+          "description": "True only when every provider replacement item was understood. False forces consumers to replay the archival stream."
+        },
+        "locked": {
+          "$ref": "#/$defs/lockedBlob",
+          "description": "Opaque provider compaction state. Reinsert only into the same provider."
+        }
+      },
+      "required": ["kind"],
+      "dependentRequired": {
+        "replacement": ["replacement_complete"],
+        "replacement_complete": ["replacement"]
+      },
+      "oneOf": [
+        { "required": ["replacement", "replacement_complete"] },
+        { "required": ["locked"] }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "cxt": {
+      "type": "http",
+      "url": "https://cxthub.com/mcp"
+    }
+  }
+}
