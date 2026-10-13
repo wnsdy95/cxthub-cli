@@ -45,6 +45,10 @@
       "mode": "100644",
       "sha256": "e591c1bd81091e7122af6a916b1c28fa962d380019606f15e1b68a8415f13321"
     },
+    "TRANSPORT_MIGRATION.md": {
+      "mode": "100644",
+      "sha256": "0914820f9da3e8e171bf8b209d6f750ee5ea42eee9ce58cef15969b96bb60320"
+    },
     "cmd/cxt/agent_context_bootstrap.go": {
       "mode": "100644",
       "sha256": "d03e4233701886bf5f96ff4363d47e6dadc81dc8c7293af30ad1d6bb40ad4f7a"
@@ -75,7 +79,7 @@
     },
     "cmd/cxt/capture_identity.go": {
       "mode": "100644",
-      "sha256": "008b392678eb717c9176863816bdc90b470943b2dd799046a41d5c7a5ca1b1f3"
+      "sha256": "4e7dc0a4aa1c5c0362be9e974d9fd41312a3e0e37cf06efddf95789a0cf931bb"
     },
     "cmd/cxt/capture_identity_test.go": {
       "mode": "100644",
@@ -83,7 +87,7 @@
     },
     "cmd/cxt/capture_push.go": {
       "mode": "100644",
-      "sha256": "1e830acf51cd10e0a89231455c18ac0e1837e281fa999888dfe72adc03619a1a"
+      "sha256": "149d8c79e4302dc15422c7bf31701374c482e1a1cee19d1fde4cb815318cbf6d"
     },
     "cmd/cxt/capture_push_test.go": {
       "mode": "100644",
@@ -101,9 +105,17 @@
       "mode": "100644",
       "sha256": "25e2ae2bdd78d6b4e1bfe30766c12fca82bf6f1c5fcd914184834f45f0994881"
     },
+    "cmd/cxt/endpoint.go": {
+      "mode": "100644",
+      "sha256": "a7d53a18df15251b3754a2783eb304be9e2cc97396c35db080100c1bf0ed45ae"
+    },
+    "cmd/cxt/endpoint_test.go": {
+      "mode": "100644",
+      "sha256": "b1c5848e90cc63765ba9f713408b7a82e71676b1685530c880302ac91675bed7"
+    },
     "cmd/cxt/main.go": {
       "mode": "100644",
-      "sha256": "350208e24c81abcc44c6339bc691ca8a9ea7e21714e74cd72261e620c55e5773"
+      "sha256": "22a88d80356ee402a38cb2af17801c6c6728515e2628379a6bbfcdea509b2f6d"
     },
     "cmd/cxt/main_test.go": {
       "mode": "100644",
@@ -239,7 +251,7 @@
     },
     "cmd/cxt/repair.go": {
       "mode": "100644",
-      "sha256": "aa00313d3a11909276ac695ca800843f92d87ff532ed552dbf6bfdb4e2a00d84"
+      "sha256": "b43225ee1416266937660745fec1cf023dfd1f2896a12f6e9714772f21fd4ab5"
     },
     "cmd/cxt/repair_args_test.go": {
       "mode": "100644",
@@ -247,7 +259,7 @@
     },
     "cmd/cxt/sync_destination.go": {
       "mode": "100644",
-      "sha256": "4396db55076e32a76f4b8776992075140069694384683d0e9659137eb0e50273"
+      "sha256": "f034f0ddc574ddf43002722e6f0ac830d81500358825f144817417ef61a03040"
     },
     "cmd/cxt/sync_destination_test.go": {
       "mode": "100644",
@@ -437,6 +449,10 @@
       "mode": "100644",
       "sha256": "e37e8565ad3a71f57d21857a4639187d772661f1d912c6ad7046e5d590de8ec0"
     },
+    "internal/adapters/authcfg/destination.go": {
+      "mode": "100644",
+      "sha256": "4e93743771365d845b867225db6a646cb7285ac9f59e0422491ed060e981b676"
+    },
     "internal/adapters/backendclient/agent_document.go": {
       "mode": "100644",
       "sha256": "e14bc0492b10d2c57bc0d3023bb031cbef3f77da51d0800b98f897f103e4c7b9"
@@ -467,7 +483,7 @@
     },
     "internal/adapters/backendclient/backend_client.go": {
       "mode": "100644",
-      "sha256": "d7d6187198fa9afb00cbacd6d3c66842de18b8fb4cf6c49ea36644a3e8b9a293"
+      "sha256": "0b83a703c24fc276f3a9081aeba2074d0f99e09af4e38e2d580ff0f00ee2dec2"
     },
     "internal/adapters/backendclient/backend_client_response_test.go": {
       "mode": "100644",
@@ -495,7 +511,7 @@
     },
     "internal/adapters/backendclient/capture_identity.go": {
       "mode": "100644",
-      "sha256": "27490a758f0bd50d282231f4eee82571274ec58a81caa1896bcc2fd929bed879"
+      "sha256": "55f7ceff2c5e8ea3880a4d81e265b7c71fd8ac4d3a579ccdca2df5764eed00f0"
     },
     "internal/adapters/backendclient/capture_identity_test.go": {
       "mode": "100644",
@@ -503,7 +519,7 @@
     },
     "internal/adapters/backendclient/catalog_delta.go": {
       "mode": "100644",
-      "sha256": "c2849f4525b81222932f784b4328d3d662d028f36e8320ce2d234db82ae6e72e"
+      "sha256": "be5a9518937e4c61b77d89dc2e6b41ed83675b88b2088c4f2bef1cca4c5618ea"
     },
     "internal/adapters/backendclient/catalog_delta_test.go": {
       "mode": "100644",
@@ -555,7 +571,7 @@
     },
     "internal/adapters/backendclient/doc_identity.go": {
       "mode": "100644",
-      "sha256": "0de978ffae11b4807f3eba2471225c85b75ce230d16b3cf459630e8ec0d5359a"
+      "sha256": "7a4c7a16626fdf07f7de1108f30e06c78ee4a69b4d11f0b62a0e54cc3657f3fd"
     },
     "internal/adapters/backendclient/doc_jobs.go": {
       "mode": "100644",
@@ -601,6 +617,10 @@
       "mode": "100644",
       "sha256": "03a796742c173f0706a56b1fee705ca678c63c47fffde60ea76a1d4facef2615"
     },
+    "internal/adapters/backendclient/endpoint_test.go": {
+      "mode": "100644",
+      "sha256": "d64163982bccf8e5a672a215c45c4595594fa41f850d46f6c90c96c097f0b0ba"
+    },
     "internal/adapters/backendclient/history.go": {
       "mode": "100644",
       "sha256": "3ab43fa146345f0b201bbb841e307b72c8a6190be571161d1ba6e88d35041816"
@@ -619,7 +639,7 @@
     },
     "internal/adapters/backendclient/memory_reuse.go": {
       "mode": "100644",
-      "sha256": "31456a8fafe25a773b659b8c6a7413f01c7fca577013a5f37f787b49df8b1c19"
+      "sha256": "54c76d54eda678c9ec6bdd9dda1caf8586500530a620d1ac640afbdca04c2d20"
     },
     "internal/adapters/backendclient/memory_reuse_e2e_test.go": {
       "mode": "100644",
@@ -651,7 +671,7 @@
     },
     "internal/adapters/backendclient/personal_work.go": {
       "mode": "100644",
-      "sha256": "a41b06ed559f9ea4f70fc3d45f712a3e3be4fca9a8d1f09a21049cadf93e1dff"
+      "sha256": "a13c065a95a5c76025a7a5d53bdfd899dbc78331bcf44293bb4c8c62f0f4a4f3"
     },
     "internal/adapters/backendclient/personal_work_test.go": {
       "mode": "100644",
@@ -667,7 +687,7 @@
     },
     "internal/adapters/backendclient/repository_connection.go": {
       "mode": "100644",
-      "sha256": "c33ec85b700be22e983e64f50df399a3dfce604f481fbc335088b8ed738b8090"
+      "sha256": "a5a880e45f852cefd613809943bd656abedea4e7447bb8fd7bdbc67ab5a20405"
     },
     "internal/adapters/backendclient/repository_initialization.go": {
       "mode": "100644",
@@ -947,7 +967,7 @@
     },
     "internal/adapters/delivery/cli/args.go": {
       "mode": "100644",
-      "sha256": "5e75048e128d0ed8d9c2334e5b56b6cd9deece6bf7b645b23f95a7d8eff66f20"
+      "sha256": "2146c9765d369de2b5be5b313e6112afef615256fa4d1615717435680a7309f5"
     },
     "internal/adapters/delivery/cli/backfill.go": {
       "mode": "100644",
@@ -975,7 +995,7 @@
     },
     "internal/adapters/delivery/cli/capture_push.go": {
       "mode": "100644",
-      "sha256": "f6dadb0d644bf37aa7a4863187d5beab9e4dffa87afc4f0b7f0113deee95f846"
+      "sha256": "ed4251be05fbf9bb3b0e60145501049a721e651df6bdbb94a8acbcf06d8f5696"
     },
     "internal/adapters/delivery/cli/capture_push_test.go": {
       "mode": "100644",
@@ -1021,9 +1041,13 @@
       "mode": "100644",
       "sha256": "8b526db511b991c5a19de4fbe369d1d2ec312fc003a9f29246bc65492e603826"
     },
+    "internal/adapters/delivery/cli/device_endpoint_test.go": {
+      "mode": "100644",
+      "sha256": "138cdbe24a7ab18d33ad283fe3d2828a15ecd10f9a108c4e711c4a3126b2b809"
+    },
     "internal/adapters/delivery/cli/device_login.go": {
       "mode": "100644",
-      "sha256": "0bb94cd9722985274c5caedf609fb137bac2cb142c48b81520bd9edc65503302"
+      "sha256": "c4fcab81612f00bb1f7258b2b0be1cc6aa0517c7c25d20150bfcf8df9a325705"
     },
     "internal/adapters/delivery/cli/diagnostics.go": {
       "mode": "100644",
@@ -1032,6 +1056,10 @@
     "internal/adapters/delivery/cli/diagnostics_test.go": {
       "mode": "100644",
       "sha256": "56f88d33a753e3c3cc44ac14e22de7b7913450b99dc23cc3df1685a30b8049e9"
+    },
+    "internal/adapters/delivery/cli/endpoint_test.go": {
+      "mode": "100644",
+      "sha256": "ee3efbe053b61d08f4da2ce05fd1cf964f2949c8344b707bf404cddfb1099828"
     },
     "internal/adapters/delivery/cli/frozen_capture.go": {
       "mode": "100644",
@@ -1043,7 +1071,7 @@
     },
     "internal/adapters/delivery/cli/frozen_capture_test.go": {
       "mode": "100644",
-      "sha256": "894606d021364bcf080db67326ad7ce4289f45baad0f7184e2b65440106f2d60"
+      "sha256": "c036c671d0431dc7f15c34b8cd8bb2f13295c8cebb8d4a17ac79c30370c8677b"
     },
     "internal/adapters/delivery/cli/frozen_code_selection_test.go": {
       "mode": "100644",
@@ -1163,7 +1191,7 @@
     },
     "internal/adapters/delivery/cli/merge_delivery.go": {
       "mode": "100644",
-      "sha256": "b8a9cdc3459377d8981c9d175a51f660b99bd55936c3cb28a48507e7db66b707"
+      "sha256": "b51c94c18838a07403bdcde1ea0f9334a3454b8b7b7e418900fe0a3020116442"
     },
     "internal/adapters/delivery/cli/merge_delivery_context.go": {
       "mode": "100644",
@@ -1175,7 +1203,7 @@
     },
     "internal/adapters/delivery/cli/merge_delivery_liveness.go": {
       "mode": "100644",
-      "sha256": "b06de1171dc8172d5fe917abfb44286f39054e6b0dc259ffca44d08038f7de81"
+      "sha256": "6d2269012bdb8b277fb05c932062a5d80b7faae507788cb465dbeaa3793dbf50"
     },
     "internal/adapters/delivery/cli/merge_delivery_liveness_test.go": {
       "mode": "100644",
@@ -1224,6 +1252,14 @@
     "internal/adapters/delivery/cli/orphan_recovery_test.go": {
       "mode": "100644",
       "sha256": "dae5a844824ce946baa2db121f41f5bd1f36e33fd6c055e29c82aa2645ac0ca7"
+    },
+    "internal/adapters/delivery/cli/pending_endpoint_test.go": {
+      "mode": "100644",
+      "sha256": "fdcd0873d8b5b7153e038583fe23d44f806173f54ba1ddb094dcdf8f3a41aa7f"
+    },
+    "internal/adapters/delivery/cli/pending_transport.go": {
+      "mode": "100644",
+      "sha256": "76f314c51d0f4ac933f30e0aa51e1fdee322c3fe76c113789bbe46161bbdf2b2"
     },
     "internal/adapters/delivery/cli/personal_work_test.go": {
       "mode": "100644",
@@ -1339,7 +1375,7 @@
     },
     "internal/adapters/delivery/cli/publication_capture_gate_test.go": {
       "mode": "100644",
-      "sha256": "22aaba08c6d80b6f8db84e5d14cadb10fd46e26b8ba786b8f233bcbd44f71d46"
+      "sha256": "d774248d883ca744a815d425004c7c9d6206de6743758d4fa5703b3a27e518ec"
     },
     "internal/adapters/delivery/cli/publication_delivery.go": {
       "mode": "100644",
@@ -1395,7 +1431,7 @@
     },
     "internal/adapters/delivery/cli/root.go": {
       "mode": "100644",
-      "sha256": "0bc0926ebee84eeb8cf76a6684f712fc92c31248661d340a72d63cfde5e2e7ed"
+      "sha256": "65d2fbb576c675e4c3a2334799fe0dc9a49207944859de5741cc5bc1b2d33531"
     },
     "internal/adapters/delivery/cli/root_fsck_test.go": {
       "mode": "100644",
@@ -1431,7 +1467,7 @@
     },
     "internal/adapters/delivery/cli/server_prefs.go": {
       "mode": "100644",
-      "sha256": "ccaa5235f51d7674f6d402a4fb071d9d8f8c0d00bedf6da90d333562bbcdfa26"
+      "sha256": "54664103220d09ebc8968dcdc1c7b2720b5eac887872c05750aa5db7efb292dd"
     },
     "internal/adapters/delivery/cli/settings_sync.go": {
       "mode": "100644",
@@ -1439,7 +1475,7 @@
     },
     "internal/adapters/delivery/cli/setup.go": {
       "mode": "100644",
-      "sha256": "c803c6e699c08de32ebed6b516e34137e576e250418fa4410ab7b4a9a18cc74f"
+      "sha256": "a60c07cfcb2d03c3e3e6a00c3358d570e060c4f31b202a3b6932394016473519"
     },
     "internal/adapters/delivery/cli/setup_flow_boundary_test.go": {
       "mode": "100644",
@@ -2095,7 +2131,7 @@
     },
     "internal/adapters/remotecfg/capture_identity.go": {
       "mode": "100644",
-      "sha256": "99d4d68fa63563054580e0169aead3e9429c9fc72d9cf918029ab36a842ded21"
+      "sha256": "a7374c786051dc837b07a1c10ce74c311fc071aeb0b7bcb5eace26b782a1f76b"
     },
     "internal/adapters/remotecfg/capture_identity_test.go": {
       "mode": "100644",
@@ -2104,6 +2140,22 @@
     "internal/adapters/remotecfg/config_fixture_test.go": {
       "mode": "100644",
       "sha256": "de6c4b8a5e6d4e9d0beb5ee01452f8114ac781b1bfc387985beb15131a245110"
+    },
+    "internal/adapters/remotecfg/endpoint.go": {
+      "mode": "100644",
+      "sha256": "da7135185dc53223a81b936d0ebf7041f488107d9732398573e299933bec797f"
+    },
+    "internal/adapters/remotecfg/endpoint_migration.go": {
+      "mode": "100644",
+      "sha256": "2ff33ac32de17b85114868849afed00ab822c2347741ab677e342867e49e5a6a"
+    },
+    "internal/adapters/remotecfg/endpoint_migration_test.go": {
+      "mode": "100644",
+      "sha256": "b3e0846bbda63c3a12e28b9b53326bca1e5ab79cbba7366569a23691f6c9cf41"
+    },
+    "internal/adapters/remotecfg/endpoint_test.go": {
+      "mode": "100644",
+      "sha256": "1c721f197a29ba3ad26c07c7e6e2467bd3daba3e7c587fe6e639b39510302edb"
     },
     "internal/adapters/remotecfg/mutation.go": {
       "mode": "100644",
@@ -2119,7 +2171,7 @@
     },
     "internal/adapters/remotecfg/remotecfg.go": {
       "mode": "100644",
-      "sha256": "94d980f32acf560aac5bd3d340a16298a88a1d62aff4f7810a8218b9df1166e5"
+      "sha256": "776a0fe7fa763749f790443ba565680e63073b4c1771f1059be2e926edeec68c"
     },
     "internal/adapters/remotecfg/remotecfg_test.go": {
       "mode": "100644",
@@ -4226,8 +4278,8 @@
       "sha256": "93cbd597457caa3bef85ddaf0ea474fcb89d03bf59e37928a985bbedc8877c34"
     }
   },
-  "source_commit": "459ef43ef6969d0b0697bd5ca1bf30b2e60a8129",
+  "source_commit": "5add0a96c4c29246ea65258aaf1b0b1404ff72ea",
   "source_repository": "wnsdy95/cxthub",
-  "source_tree": "d97ded404744d238a850c78141e9e12cd23ba4c4",
+  "source_tree": "3ff8bcaab77be2873b94aa61db89da2b99a25319",
   "version": 1
 }
