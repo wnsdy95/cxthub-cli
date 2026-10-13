@@ -2535,7 +2535,11 @@
     },
     "internal/adapters/storage/selected_pull.go": {
       "mode": "100644",
-      "sha256": "1258c1841d0bd166d875824958c9c14eea07af0a48c28b9585c6e516425a7aac"
+      "sha256": "85fce670b25a6cbdac7360e87c0e543523dad9630652f4a10e0a1b298b6608c1"
+    },
+    "internal/adapters/storage/selected_pull_compat_test.go": {
+      "mode": "100644",
+      "sha256": "25dd9ba1c1cf6bafacf8f4f235400123bd57cab445bb4505e17b46eabcb5ce0c"
     },
     "internal/adapters/storage/session_notice.go": {
       "mode": "100644",
@@ -3601,6 +3605,14 @@
       "mode": "100644",
       "sha256": "10b5d4675e2e5d1408c978f4451a44fd8901bc1e66f688a92f8170a7858f0c3f"
     },
+    "internal/domain/branch_context_merge_json.go": {
+      "mode": "100644",
+      "sha256": "f4aad598178967685a475d85aaffb4de126ad472b2477bac023b96144d795811"
+    },
+    "internal/domain/branch_context_merge_json_test.go": {
+      "mode": "100644",
+      "sha256": "a0d47d13299706cc0cade0f4eaf65368e04b22f5668c4d7ee9da5867015131ad"
+    },
     "internal/domain/branch_lifecycle.go": {
       "mode": "100644",
       "sha256": "9194d2db7aebdef86dc53c3f6f71e2c10c7a39f1ce378ac86ae3bace41e927f0"
@@ -3819,7 +3831,7 @@
     },
     "internal/domain/history_query.go": {
       "mode": "100644",
-      "sha256": "6d897175d3f8ccafe04f59e9a9ed17484024fb6e26d66f500f8cd1715c2be077"
+      "sha256": "1d185c968c4095a2febd4effad448179582c01e1e6aaca216b2f2dc35f2f7a62"
     },
     "internal/domain/history_query_test.go": {
       "mode": "100644",
@@ -4278,8 +4290,8 @@
       "sha256": "93cbd597457caa3bef85ddaf0ea474fcb89d03bf59e37928a985bbedc8877c34"
     }
   },
-  "source_commit": "fd342b81d78d9c96b032121a89785b38f0a36f6c",
+  "source_commit": "06d8b4238c42ef56f02ec174bd2f2b3320cca4c2",
   "source_repository": "wnsdy95/cxthub",
-  "source_tree": "72b69f1c7cbc7ac554af501b098c0df08b66446b",
+  "source_tree": "b913188179e84069f6f38b00ee19b5302e10c0a5",
   "version": 1
 }
