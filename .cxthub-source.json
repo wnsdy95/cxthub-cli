@@ -11,7 +11,7 @@
     },
     ".gitignore": {
       "mode": "100644",
-      "sha256": "5ed2aefe8783ac008c85fc748c27c9ea5338c5dcc697dbf870a0b0d74fb01094"
+      "sha256": "12c8492e3731594e4a9a97926ba1fedff5f32185fdd274c641646526838cb743"
     },
     "CODE_OF_CONDUCT.md": {
       "mode": "100644",
@@ -727,7 +727,7 @@
     },
     "internal/adapters/capture/app_sessions.go": {
       "mode": "100644",
-      "sha256": "5e10dd23b5f558a4680be96520859a92394d01a172fdb456eab902b41652cfea"
+      "sha256": "e48c4ee1ccb94bf8662066b2d59cef1614b50879e565f913d18729f8ae0cc780"
     },
     "internal/adapters/capture/app_sessions_test.go": {
       "mode": "100644",
@@ -743,7 +743,7 @@
     },
     "internal/adapters/capture/capture_test.go": {
       "mode": "100644",
-      "sha256": "e110b8afcf4d9fd4966cc499a36723c8831f324c10437a7446b3e861f231dbb6"
+      "sha256": "8454b480c05726c45c3c770ae7c8d40ae640adbd4b37bff9c9e7091154e0c64d"
     },
     "internal/adapters/capture/claude_capture.go": {
       "mode": "100644",
@@ -751,11 +751,27 @@
     },
     "internal/adapters/capture/codex_capture.go": {
       "mode": "100644",
-      "sha256": "a1089e34e77c1f6ff4ff6d5f0f27bdf5815b676addbaf91a010f7e4fc5d49b71"
+      "sha256": "f7fdc52e164e84f9d8990d5a952350f5709b980580b6f4d8840046cf3264841f"
+    },
+    "internal/adapters/capture/codex_generations_test.go": {
+      "mode": "100644",
+      "sha256": "1f9d727425f76dc1a4710712de8ee6caf826f2be6bf2a076be49c54b99348193"
+    },
+    "internal/adapters/capture/codex_integration_review_test.go": {
+      "mode": "100644",
+      "sha256": "a09d103a544d77bf74d808427ed106a86e5f54262d24ee92bcb52a33d8c6f887"
     },
     "internal/adapters/capture/codex_rollout_retired_audit_test.go": {
       "mode": "100644",
       "sha256": "ac40c84f74a3fd070e6d37b76f9f36823d46feb1a1bebb7501d4899193ba26d7"
+    },
+    "internal/adapters/capture/codex_rollover_regression_test.go": {
+      "mode": "100644",
+      "sha256": "337b11395413515ca7e66b76c53019217b1e85dfca26c4110fb51ab349313d27"
+    },
+    "internal/adapters/capture/codex_sessions.go": {
+      "mode": "100644",
+      "sha256": "42c5c9a12b31515be121c57f1027319d2aa9e05d3fb4c5413e7dc470c52b3e0c"
     },
     "internal/adapters/capture/coordinator.go": {
       "mode": "100644",
@@ -815,11 +831,11 @@
     },
     "internal/adapters/capture/live.go": {
       "mode": "100644",
-      "sha256": "d61625f91982b841ff71355c8653addd6f73fa587da7f6d2339f9113561e2377"
+      "sha256": "4769a6adaf19528b371bd1c42789706e588fa80995f93e281b7818ce578e556a"
     },
     "internal/adapters/capture/live_test.go": {
       "mode": "100644",
-      "sha256": "5c9fadeed138d88cc815fb48887269f6c1e18d216c0d8c8a154974ef50c9bc02"
+      "sha256": "0ff477c3cf50bbfb5a59a181059ec92ea645962e600959ff1b877ccdb06d1681"
     },
     "internal/adapters/capture/native_wrapper_session.go": {
       "mode": "100644",
@@ -875,7 +891,7 @@
     },
     "internal/adapters/capture/staging_sources.go": {
       "mode": "100644",
-      "sha256": "4fb2001840b1fb9d43faeaf96aadfc50277f8654c19c0ce26b4a0e93114884f0"
+      "sha256": "ccdac7d1261842c19f4eec0410558e148e959d0ba0b7b1884c0779355bcc5d7e"
     },
     "internal/adapters/capture/staging_sources_test.go": {
       "mode": "100644",
@@ -1087,7 +1103,7 @@
     },
     "internal/adapters/delivery/cli/githook.go": {
       "mode": "100644",
-      "sha256": "9bd28168da0b11db8bbd25623f06c1d6fae193ab297c0162a001ffabb20b36fd"
+      "sha256": "c30bd3160f5b7871943a8cb4d58107bf486f264f0a1b6b325b804d06f1e6fc35"
     },
     "internal/adapters/delivery/cli/githook_activation_test.go": {
       "mode": "100644",
@@ -1139,7 +1155,7 @@
     },
     "internal/adapters/delivery/cli/githook_session_id_test.go": {
       "mode": "100644",
-      "sha256": "4dfdc6af5af8beaa344bbb85d213fb5fea64a7555a51c4b66970e984e7420351"
+      "sha256": "9b2dcd2d0f6b8fb82f7018b445abcfc5c358346290c5bb72c41980ba08975a70"
     },
     "internal/adapters/delivery/cli/history_query_test.go": {
       "mode": "100644",
@@ -1311,7 +1327,7 @@
     },
     "internal/adapters/delivery/cli/provider_launch.go": {
       "mode": "100644",
-      "sha256": "bd6ba8f10af2d7ac1767057c0bc5b561fb5414bf89f219f782014637d5f659e9"
+      "sha256": "f8527388cc7239785cbb85a208f1797ec722722cb36f5e7d081d916c77fa2c9e"
     },
     "internal/adapters/delivery/cli/provider_launch_args.go": {
       "mode": "100644",
@@ -1332,6 +1348,10 @@
     "internal/adapters/delivery/cli/provider_launch_prompt_test.go": {
       "mode": "100644",
       "sha256": "f23ac5a0823209e4cefb408f5d508d264d46bd11d17f1e326ef95d8fc1e67a62"
+    },
+    "internal/adapters/delivery/cli/provider_launch_retirement_test.go": {
+      "mode": "100644",
+      "sha256": "ee20256cf75363cb31e0184e5f646f8fbab7f4291f1f2dadd7c62eec266ed1de"
     },
     "internal/adapters/delivery/cli/provider_launch_signals.go": {
       "mode": "100644",
@@ -1563,7 +1583,7 @@
     },
     "internal/adapters/delivery/hook/handler.go": {
       "mode": "100644",
-      "sha256": "e8e49e6939963103fdc7ef1bae478c2e9926eb50996b55f134ce3843144d4b22"
+      "sha256": "1741452ac5135cfb1be57ade667063e9fc25e02ef2762c5120e522f7a8ced9b2"
     },
     "internal/adapters/delivery/hook/handler_admission_test.go": {
       "mode": "100644",
@@ -1576,6 +1596,10 @@
     "internal/adapters/delivery/hook/handler_test.go": {
       "mode": "100644",
       "sha256": "165c0951b123fdda3c1c9a8aca3fc5e1576c5baa3b26d12f5bf2486852eaa469"
+    },
+    "internal/adapters/delivery/hook/rollover_test.go": {
+      "mode": "100644",
+      "sha256": "926f5bd8c0005706ed6fa69e4cc7f40e5fe288c1b90eddbc5405673cf214b052"
     },
     "internal/adapters/delivery/hook/session_notice_test.go": {
       "mode": "100644",
@@ -1667,11 +1691,11 @@
     },
     "internal/adapters/memory/codex_memory.go": {
       "mode": "100644",
-      "sha256": "7721f174eae5d27944b542748efffcc9bd4e67379e39ead6b2d0bffdcf433fda"
+      "sha256": "9b093dd694a2ed49c09297d8a6ea4a8a3dbf3c0de73ac8f3e256314f8b99daab"
     },
     "internal/adapters/memory/codex_memory_test.go": {
       "mode": "100644",
-      "sha256": "e22b6ea2504214d6e67bcd484fdef05530ac26fe73cc82aff25e91a29fdc586a"
+      "sha256": "4adf6257800b9e3d94b8892a22b7568ea89d988bb8afcd220a8c545676a150e2"
     },
     "internal/adapters/memory/distiller.go": {
       "mode": "100644",
@@ -2119,7 +2143,7 @@
     },
     "internal/adapters/providerfs/paths.go": {
       "mode": "100644",
-      "sha256": "de509427372c15e93abe968c1578984677aa7cd70dfad680ab86b795834c91c4"
+      "sha256": "d8bf56b832931f7c694f13cd3ebe443c8b5f7343cb7a9c5cd771785631ec7ea8"
     },
     "internal/adapters/providerfs/safe_write.go": {
       "mode": "100644",
@@ -2127,7 +2151,7 @@
     },
     "internal/adapters/providerfs/safe_write_test.go": {
       "mode": "100644",
-      "sha256": "21ec04c7726d70d141aff1c43b444bf83076473e18afa5879a2da9e0afb45ee1"
+      "sha256": "a1b9eaacb64eda1bf634b9d34916bf373dfa63ce2dec71f3a09e7e1869efc6e6"
     },
     "internal/adapters/remotecfg/capture_identity.go": {
       "mode": "100644",
@@ -2371,7 +2395,7 @@
     },
     "internal/adapters/storage/file_store.go": {
       "mode": "100644",
-      "sha256": "80e257e357d0f321ccfd40252d11820e3639cf62308dd7cdb89169e3a6472817"
+      "sha256": "d37161568323499e7bd2041e5bb7bc4e6049265a1503bf95fee84203d1b60a2c"
     },
     "internal/adapters/storage/file_store_security_test.go": {
       "mode": "100644",
@@ -2853,6 +2877,14 @@
       "mode": "100644",
       "sha256": "4344ff60a4d59dc2d8b1d7b7467774a3f174393d5ca747b1832ca8195942ef47"
     },
+    "internal/app/codex_generation_pending_test.go": {
+      "mode": "100644",
+      "sha256": "caf954939c18350c3e5fe6a705a20523efc8bd975c77daf2c31855630b2e96ec"
+    },
+    "internal/app/codex_rollover_regression_test.go": {
+      "mode": "100644",
+      "sha256": "52f4e0eb86efc30aa73d3523df131e0eda5dd991c8053d31c02fef4581b6cc82"
+    },
     "internal/app/command_failure_test.go": {
       "mode": "100644",
       "sha256": "04512be4ab2bac37c39493f75a30351ddbbc14e1c9fe8b7f41ea57710b1f9d60"
@@ -3187,7 +3219,7 @@
     },
     "internal/app/save_session.go": {
       "mode": "100644",
-      "sha256": "b2bc860647722b942a4bced3fdf43636d714d4e10bc0fe3b0e3e18b9c53f64fa"
+      "sha256": "267a11f32d7c488d62c9c6243dd6a2bde419a2a1211993df4a7b11d36f33e35b"
     },
     "internal/app/save_session_gc_test.go": {
       "mode": "100644",
@@ -4211,7 +4243,7 @@
     },
     "internal/ports/outbound/session_capture.go": {
       "mode": "100644",
-      "sha256": "1007ffdd621f4aa9b4ff114444f458a5ba38458b87c9c2c045f4d13fd3aeb461"
+      "sha256": "d87af213f31a7fa0c7f9f7cb2ec6bd9539957b607af622bc16f5bcc4555ecf8b"
     },
     "internal/ports/outbound/session_notice.go": {
       "mode": "100644",
@@ -4290,8 +4322,8 @@
       "sha256": "93cbd597457caa3bef85ddaf0ea474fcb89d03bf59e37928a985bbedc8877c34"
     }
   },
-  "source_commit": "bc4e21f96af888352b84841e58ce1df9d7ff5aa1",
+  "source_commit": "36aa67b157722c0ce5fec40bcbec727cbb96cdad",
   "source_repository": "wnsdy95/cxthub",
-  "source_tree": "9961c129e93a8563457bd6c5e290a97b2fe597ab",
+  "source_tree": "31828a20c5e35ac82f8ce123d8d8a468e78a26ff",
   "version": 1
 }
