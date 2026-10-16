@@ -267,7 +267,7 @@
     },
     "docs/CLI.md": {
       "mode": "100644",
-      "sha256": "920190f333866fcdd4c48e7528b9359beb889eafb971d8e6cbde411fa0c5cd0e"
+      "sha256": "24d005d89e5b7abb6524c5f26ad6152f07157df0cd696cb5123b32a303c808ff"
     },
     "go.mod": {
       "mode": "100644",
@@ -483,7 +483,7 @@
     },
     "internal/adapters/backendclient/backend_client.go": {
       "mode": "100644",
-      "sha256": "0b83a703c24fc276f3a9081aeba2074d0f99e09af4e38e2d580ff0f00ee2dec2"
+      "sha256": "3903255acdc686b4f66e99a2dd790af37fe641a6916819cbb438c6b0ac91a636"
     },
     "internal/adapters/backendclient/backend_client_response_test.go": {
       "mode": "100644",
@@ -599,7 +599,7 @@
     },
     "internal/adapters/backendclient/doc_upload.go": {
       "mode": "100644",
-      "sha256": "af5733db07f79623ee01298ac9efe7dfe27ea193a37dba7e5d16d390e3565096"
+      "sha256": "b76b05d77b5d50b4d8e2e0fe6de0cbd87775abaee05ce39f693c6af966798d54"
     },
     "internal/adapters/backendclient/doc_upload_test.go": {
       "mode": "100644",
@@ -708,6 +708,14 @@
     "internal/adapters/backendclient/sync_diagnostics_test.go": {
       "mode": "100644",
       "sha256": "6b6d4d6eb0b1acbe7bf2b498e50c8683352ed4baca989f873d53551a90dc4d5f"
+    },
+    "internal/adapters/backendclient/upload_retry.go": {
+      "mode": "100644",
+      "sha256": "62ad20da51fc8457813ccac8075411e29da8b58ae9cc12b22d189eaf716d0676"
+    },
+    "internal/adapters/backendclient/upload_retry_test.go": {
+      "mode": "100644",
+      "sha256": "ccf5bf5cabf5f3b81290dba7844b5d68f51727fefc794039eeb2facd99901293"
     },
     "internal/adapters/boundary/boundary.go": {
       "mode": "100644",
@@ -4322,8 +4330,8 @@
       "sha256": "93cbd597457caa3bef85ddaf0ea474fcb89d03bf59e37928a985bbedc8877c34"
     }
   },
-  "source_commit": "9496751e7678a9ec1b6479bff0886914d20eff8d",
+  "source_commit": "a4a3ef12cc5a213b40884c2da2fc5754a674675c",
   "source_repository": "wnsdy95/cxthub",
-  "source_tree": "b70aa0106961c46c9bf24263f0cfc7a39c42d55e",
+  "source_tree": "ceec42393985f9cc828d7a9505a35cc642b36ab6",
   "version": 1
 }
