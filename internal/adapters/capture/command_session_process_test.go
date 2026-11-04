@@ -1,4 +1,4 @@
-package cli
+package capture
 
 import (
 	"context"
@@ -29,6 +29,18 @@ func TestHasProcessAncestor(t *testing.T) {
 	}
 }
 
+func TestCommandSessionResolverRejectsMissingCaptureSources(test *testing.T) {
+	for _, resolver := range []*CommandSessionResolver{nil, NewCommandSessionResolver(nil, NewCodexCapture()), NewCommandSessionResolver(NewClaudeCapture(), nil)} {
+		selected, err := resolver.ResolveCommandSession(context.Background(), test.TempDir(), domain.ProviderCodex)
+		if err == nil || selected.SessionPath != "" || selected.SessionID != "" || selected.Provider != "" {
+			test.Fatal("missing capture sources selected an implicit session", selected, err)
+		}
+		if provider, managed := resolver.SupervisedProvider(context.Background(), test.TempDir()); provider != "" || managed {
+			test.Fatal("missing capture sources claimed wrapper ownership", provider, managed)
+		}
+	}
+}
+
 func TestHasProcessAncestorFailsClosedOnCycle(t *testing.T) {
 	parent := func(pid int) (int, bool) {
 		if pid == 10 {
@@ -45,18 +57,19 @@ func TestSupervisedProviderRequiresOwningWrapperPID(t *testing.T) {
 	t.Setenv("CXT_WRAPPED", "1")
 	t.Setenv("CXT_WRAPPED_AGENT", "codex")
 	t.Setenv("CXT_WRAPPER_PID", strconv.Itoa(os.Getppid()))
-	provider, managed := supervisedProvider(context.Background(), t.TempDir())
+	resolver := NewCommandSessionResolver(NewClaudeCapture(), NewCodexCapture())
+	provider, managed := resolver.SupervisedProvider(context.Background(), t.TempDir())
 	if provider != domain.ProviderCodex || !managed {
 		t.Fatalf("provider=%q managed=%v, want codex/true", provider, managed)
 	}
 
 	t.Setenv("CXT_WRAPPER_PID", "99999999")
-	if _, managed := supervisedProvider(context.Background(), t.TempDir()); managed {
+	if _, managed := resolver.SupervisedProvider(context.Background(), t.TempDir()); managed {
 		t.Fatal("stale wrapper PID was accepted")
 	}
 
 	t.Setenv("CXT_WRAPPER_PID", "")
-	if _, managed := supervisedProvider(context.Background(), t.TempDir()); managed {
+	if _, managed := resolver.SupervisedProvider(context.Background(), t.TempDir()); managed {
 		t.Fatal("missing wrapper PID was accepted")
 	}
 }
@@ -73,27 +86,6 @@ func TestProviderByRecency(t *testing.T) {
 	}
 	if providerByRecency(100, 100) != domain.ProviderClaude {
 		t.Fatal("tie must stay claude")
-	}
-}
-
-func TestSessionIDFromAgentArgs(t *testing.T) {
-	id := "11111111-1111-4111-8111-111111111111"
-	for name, tt := range map[string]struct {
-		agent string
-		args  []string
-		want  string
-	}{
-		"codex resume":          {agent: "codex", args: []string{"resume", id, "--yolo"}, want: id},
-		"claude resume":         {agent: "claude", args: []string{"--resume", id}, want: id},
-		"claude inline resume":  {agent: "claude", args: []string{"--resume=" + id}, want: id},
-		"fresh session unknown": {agent: "codex", args: []string{"--yolo"}},
-		"invalid id rejected":   {agent: "codex", args: []string{"resume", "../../other"}},
-	} {
-		t.Run(name, func(t *testing.T) {
-			if got := sessionIDFromAgentArgs(tt.agent, tt.args); got != tt.want {
-				t.Fatalf("session id = %q, want %q", got, tt.want)
-			}
-		})
 	}
 }
 
