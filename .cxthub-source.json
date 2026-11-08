@@ -115,7 +115,11 @@
     },
     "cmd/cxt/endpoint.go": {
       "mode": "100644",
-      "sha256": "a7d53a18df15251b3754a2783eb304be9e2cc97396c35db080100c1bf0ed45ae"
+      "sha256": "0bc87b49ac518e7adc9d2ae1c5f9744f699e6eb22d6c0ef7e6c6a3aab961fca5"
+    },
+    "cmd/cxt/endpoint_cause_test.go": {
+      "mode": "100644",
+      "sha256": "79e4816457751c2a3b5b5d597a11a646d30ff825500e0bcddb9ba791ca9055db"
     },
     "cmd/cxt/endpoint_test.go": {
       "mode": "100644",
@@ -499,7 +503,7 @@
     },
     "internal/adapters/backendclient/backend_client.go": {
       "mode": "100644",
-      "sha256": "3903255acdc686b4f66e99a2dd790af37fe641a6916819cbb438c6b0ac91a636"
+      "sha256": "4cd5da74ce35f179fce1fc5af036fcea83c97842b4bb764914a4d62abd56c6b8"
     },
     "internal/adapters/backendclient/backend_client_response_test.go": {
       "mode": "100644",
@@ -623,7 +627,7 @@
     },
     "internal/adapters/backendclient/doc_upload.go": {
       "mode": "100644",
-      "sha256": "b76b05d77b5d50b4d8e2e0fe6de0cbd87775abaee05ce39f693c6af966798d54"
+      "sha256": "90fdc4d8bbdd4b886cfe2d99dad650065e014aa37bdd5a8466abd932462f1a73"
     },
     "internal/adapters/backendclient/doc_upload_test.go": {
       "mode": "100644",
@@ -647,7 +651,7 @@
     },
     "internal/adapters/backendclient/history.go": {
       "mode": "100644",
-      "sha256": "3ab43fa146345f0b201bbb841e307b72c8a6190be571161d1ba6e88d35041816"
+      "sha256": "e5141e32b359a6dfc5fed7e2af00ea2de3711657a64fd0b5522a42e8d1fea415"
     },
     "internal/adapters/backendclient/http_error_test.go": {
       "mode": "100644",
@@ -655,7 +659,7 @@
     },
     "internal/adapters/backendclient/memory_publication.go": {
       "mode": "100644",
-      "sha256": "856368ca103f2620454106e25b26ea08bf5519a48b0e678207eacaba2150abb2"
+      "sha256": "ed86d985633c943d2a4ca241e88662d6e58768c48fb98f48ef0919bbccd994d9"
     },
     "internal/adapters/backendclient/memory_publication_test.go": {
       "mode": "100644",
@@ -733,13 +737,21 @@
       "mode": "100644",
       "sha256": "6b6d4d6eb0b1acbe7bf2b498e50c8683352ed4baca989f873d53551a90dc4d5f"
     },
+    "internal/adapters/backendclient/upload_patience_test.go": {
+      "mode": "100644",
+      "sha256": "00e220fdfb349224f387f8f74b19e798444a4fed929a71df7eeb965244f2babf"
+    },
     "internal/adapters/backendclient/upload_retry.go": {
       "mode": "100644",
-      "sha256": "62ad20da51fc8457813ccac8075411e29da8b58ae9cc12b22d189eaf716d0676"
+      "sha256": "f62f580fa206ab7f975b51a82843f5171a0108fb0d6d1a39e81930fbfdb66c19"
     },
     "internal/adapters/backendclient/upload_retry_test.go": {
       "mode": "100644",
       "sha256": "ccf5bf5cabf5f3b81290dba7844b5d68f51727fefc794039eeb2facd99901293"
+    },
+    "internal/adapters/backendclient/upload_transient_test.go": {
+      "mode": "100644",
+      "sha256": "38f67a9f8c65a48d51447b8f74dd4fca07a14cd08a02fdc464b1ddbe373a9018"
     },
     "internal/adapters/boundary/boundary.go": {
       "mode": "100644",
@@ -1067,11 +1079,15 @@
     },
     "internal/adapters/delivery/cli/capture_push.go": {
       "mode": "100644",
-      "sha256": "9a1c95a982c1557bca915e4699141dcc9dacb9351bfd669abedda313fff06adc"
+      "sha256": "98f04a642ac73d8c7873176662d810c1abf300d0d47f00047e9be3f505aa4bef"
+    },
+    "internal/adapters/delivery/cli/capture_push_status.go": {
+      "mode": "100644",
+      "sha256": "ded5419ddf6525bf5c775915846247d40d3148fb296882288f4f6082856b5dc7"
     },
     "internal/adapters/delivery/cli/capture_push_test.go": {
       "mode": "100644",
-      "sha256": "957b5e71bdd50a4ebdbc5051a5d17c7ca2995f672e38d1b950ba5e8ada5d6cab"
+      "sha256": "b0db85cd76f44dcba94f6d145e1aac5f303c00a9124b43562b0003fcd0cc5aa1"
     },
     "internal/adapters/delivery/cli/capture_recovery.go": {
       "mode": "100644",
@@ -1171,7 +1187,7 @@
     },
     "internal/adapters/delivery/cli/githook.go": {
       "mode": "100644",
-      "sha256": "da2174741b807a6c8193531e3886c2ab2bf2348e3c59156201017f9a9b3b48f4"
+      "sha256": "f0c709486fa9e1ee2dc50dbe65c87cee83f5ebdd5cf237f65ef46295d2095868"
     },
     "internal/adapters/delivery/cli/githook_activation_test.go": {
       "mode": "100644",
@@ -1367,7 +1383,7 @@
     },
     "internal/adapters/delivery/cli/pre_push_selection.go": {
       "mode": "100644",
-      "sha256": "6b2924c6b381b34490d30133695e9bfd789e1371d3b7f7b2e1e3c70dd1c8e28c"
+      "sha256": "1092fb417b432e18478de674a9e31b98d6a5a00afbe196ac70244c32e4c5c520"
     },
     "internal/adapters/delivery/cli/pre_push_selection_test.go": {
       "mode": "100644",
@@ -1531,7 +1547,7 @@
     },
     "internal/adapters/delivery/cli/root.go": {
       "mode": "100644",
-      "sha256": "1b5f24e142d132ec47ca4de8c3a93a0475f352084402577aedf52e233ce54140"
+      "sha256": "eef0c95e2d80c5b0d0a7b8e32dffb571ad45fc096bbb84e26fdc066e007e1614"
     },
     "internal/adapters/delivery/cli/root_fsck_test.go": {
       "mode": "100644",
@@ -1627,11 +1643,11 @@
     },
     "internal/adapters/delivery/cli/sync_progress.go": {
       "mode": "100644",
-      "sha256": "0fbbf746932ae064847157ff1c6103beff438f93aeca9cdd4d4b42e5b311b45e"
+      "sha256": "247a8e42bb8a5248e30e3cff0caa4d079d0971fc0f1e984f1c948de5bf1803db"
     },
     "internal/adapters/delivery/cli/sync_status.go": {
       "mode": "100644",
-      "sha256": "b4dedca906aaa5d755075a57d772133d27c2d27449cb246aef27fd8e43c2e104"
+      "sha256": "335452719d716f50ec5ee702eb055db23a9f1f3e38054a470ea9e83f7430e804"
     },
     "internal/adapters/delivery/cli/sync_status_test.go": {
       "mode": "100644",
@@ -1652,6 +1668,14 @@
     "internal/adapters/delivery/cli/typed_command_failure_test.go": {
       "mode": "100644",
       "sha256": "350f0d502144df40822c8e7804cd84b3df8af37c9361644800f9dd89be0d2ca8"
+    },
+    "internal/adapters/delivery/cli/upload_policy.go": {
+      "mode": "100644",
+      "sha256": "faa6351c293a2df6d5e04d88c6da15f03477774f664cac31a88eb02b9743f294"
+    },
+    "internal/adapters/delivery/cli/upload_policy_test.go": {
+      "mode": "100644",
+      "sha256": "d3b6a2d6fdac036997386adf539ab50b22a7fe5bc757ad63f1f3c4f9bc4e1a2b"
     },
     "internal/adapters/delivery/cli/working_state.go": {
       "mode": "100644",
@@ -3925,6 +3949,14 @@
       "mode": "100644",
       "sha256": "5261153bcdc67de1eb18cba905a9c01069c623469bb1be9b4db7625a30ef2f8a"
     },
+    "internal/domain/error_text.go": {
+      "mode": "100644",
+      "sha256": "a3c259a56a426f6ec711943b40c8634ff3232f5df0150a6480892946f2171b02"
+    },
+    "internal/domain/error_text_test.go": {
+      "mode": "100644",
+      "sha256": "4b063528d13fbc99d358a8ca93aa91140e586e47b3a29dacc87db325a22cdd73"
+    },
     "internal/domain/errors.go": {
       "mode": "100644",
       "sha256": "4264f08cd84c66e804d538114e6e61a18d1e5ec39f4c5c62834dc6ef6350bbb3"
@@ -4393,6 +4425,10 @@
       "mode": "100644",
       "sha256": "44ba609d0b32f2d095cef04e60101063aac16b90baa1e000ef87502d770afe27"
     },
+    "internal/ports/outbound/upload_policy.go": {
+      "mode": "100644",
+      "sha256": "025b894c30d4b1e56e7702d8147421b2d342f71164239d6da6c878e3de4d2eb3"
+    },
     "internal/ports/outbound/working_memory.go": {
       "mode": "100644",
       "sha256": "4f63763e4617e1a2a793d3eedba047eb371afd41c27be8558308674f90e8ceae"
@@ -4435,11 +4471,11 @@
     },
     "scripts/test-go-batches.py": {
       "mode": "100644",
-      "sha256": "f7701a0b452e2aee65b20bc8b5ffb02010182fab87126d9bd4470a054a83d761"
+      "sha256": "21754dc51a4623495c92d8b3626577c5a9456b4240a7b9e35fabddfd6629f4e8"
     }
   },
-  "source_commit": "95d6c1a788b6ec477979ee1935d6235ab1c677d4",
+  "source_commit": "2d7a3283e53adc4a045f809e7cfbbdb70ad67169",
   "source_repository": "wnsdy95/cxthub",
-  "source_tree": "970144b7d13c24cb8c5ce851e4d43fbf1c98c5ea",
+  "source_tree": "38ec0a92c587df717a6e73398e3d710c94daf1b2",
   "version": 1
 }
