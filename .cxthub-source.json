@@ -291,7 +291,7 @@
     },
     "go.mod": {
       "mode": "100644",
-      "sha256": "d0f59817e9cd0dd3206aae1322004e20e86a7e8bf7975a3645dc28b06a1c422f"
+      "sha256": "3f4e17da9c3436c72c1b6000d02c4be9ba66f087cc14ffc9bc2353bb4d1e85eb"
     },
     "go.sum": {
       "mode": "100644",
@@ -4474,8 +4474,8 @@
       "sha256": "21754dc51a4623495c92d8b3626577c5a9456b4240a7b9e35fabddfd6629f4e8"
     }
   },
-  "source_commit": "f04d6ba6b8dbc8e1244818f35ade01f799f7ead9",
+  "source_commit": "009e44359ec519343450f12d85d26167ca28d2b4",
   "source_repository": "wnsdy95/cxthub",
-  "source_tree": "beb04b6aee61f0c953516d9681982a050e459318",
+  "source_tree": "ed851f0134656b9d0e13bd3fba7991dda0b24e3e",
   "version": 1
 }
