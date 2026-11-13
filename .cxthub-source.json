@@ -291,11 +291,11 @@
     },
     "go.mod": {
       "mode": "100644",
-      "sha256": "3f4e17da9c3436c72c1b6000d02c4be9ba66f087cc14ffc9bc2353bb4d1e85eb"
+      "sha256": "a26a1abeb7d9c88623716b458464bbe1ff9cebb21e578b7a33c77f00e64906e2"
     },
     "go.sum": {
       "mode": "100644",
-      "sha256": "5b2cbc6ff994ba03e949b8c7a35f1bf1ae44278b4866d5c232cfd42473e9c4b3"
+      "sha256": "49a177df5ffcbda04c7fecc1bd6a9a61c93c2fff913c116ff26fb62a19249753"
     },
     "goreleaser.yaml": {
       "mode": "100644",
@@ -4474,8 +4474,8 @@
       "sha256": "21754dc51a4623495c92d8b3626577c5a9456b4240a7b9e35fabddfd6629f4e8"
     }
   },
-  "source_commit": "e8ac4c4abbaacac22e39d3e744947ba7daed1c9d",
+  "source_commit": "488405d7992a5497dcdfc186854de84819dccb2f",
   "source_repository": "wnsdy95/cxthub",
-  "source_tree": "4c2a33136c6a660ddfcd4c07655e7f311df82bc5",
+  "source_tree": "00920df22134d3fcfbdff31399e1e2b9b98e94ea",
   "version": 1
 }
