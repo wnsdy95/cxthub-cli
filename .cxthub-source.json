@@ -127,7 +127,7 @@
     },
     "cmd/cxt/main.go": {
       "mode": "100644",
-      "sha256": "d29f4e1279bebd31b6443a4725d5fbc36e2c3b30fc0b349fc2843390a631da37"
+      "sha256": "4069b05c9583d92f3eb8bdf65235759fc628ae8516f4b1c6808237b040620a30"
     },
     "cmd/cxt/main_test.go": {
       "mode": "100644",
@@ -284,6 +284,10 @@
     "cmd/cxt/sync_destination_test.go": {
       "mode": "100644",
       "sha256": "b9c42e024813097d8fa11f30c822027e908ac91a7f1e3deec62164097c33ad5a"
+    },
+    "cmd/cxt/sync_history_test.go": {
+      "mode": "100644",
+      "sha256": "986ce6f021edef55fecf1583148aa69f00130e28902f2c3e9c3ab8021f9f6a58"
     },
     "docs/CLI.md": {
       "mode": "100644",
@@ -4482,8 +4486,8 @@
       "sha256": "21754dc51a4623495c92d8b3626577c5a9456b4240a7b9e35fabddfd6629f4e8"
     }
   },
-  "source_commit": "34df9f611ec585e25e61936ff1735e5195cb7c6d",
+  "source_commit": "6d0696d47c5f9acbf4e49ab7d4b92206e02bce79",
   "source_repository": "wnsdy95/cxthub",
-  "source_tree": "90d73ad91b6535eb0b7e33b134fbb781dbee4741",
+  "source_tree": "2e53df47d90b3130819a124d755184e86ecb5ee4",
   "version": 1
 }
