@@ -127,7 +127,7 @@
     },
     "cmd/cxt/main.go": {
       "mode": "100644",
-      "sha256": "e4c8f754e631db66823a3be5d5c185de9f69b1bc6984423eeac6dbc2ac3e4028"
+      "sha256": "d29f4e1279bebd31b6443a4725d5fbc36e2c3b30fc0b349fc2843390a631da37"
     },
     "cmd/cxt/main_test.go": {
       "mode": "100644",
@@ -271,7 +271,7 @@
     },
     "cmd/cxt/replica_inspection.go": {
       "mode": "100644",
-      "sha256": "d08040911a69675e78e649451c2f51de87cb5ad00836e98337e979911e3e0ab2"
+      "sha256": "a895cd80fef36e46a8bc873767957d1a3daebe6bda9592e55ce41f752d72e497"
     },
     "cmd/cxt/repository_locks_test.go": {
       "mode": "100644",
@@ -287,7 +287,7 @@
     },
     "docs/CLI.md": {
       "mode": "100644",
-      "sha256": "24d005d89e5b7abb6524c5f26ad6152f07157df0cd696cb5123b32a303c808ff"
+      "sha256": "130b791b8213caa9006898568897bfa9747966047e660b5611f0764a772187de"
     },
     "go.mod": {
       "mode": "100644",
@@ -1051,11 +1051,11 @@
     },
     "internal/adapters/delivery/cli/args.go": {
       "mode": "100644",
-      "sha256": "2146c9765d369de2b5be5b313e6112afef615256fa4d1615717435680a7309f5"
+      "sha256": "ffde5e3151cdf248c150a7fc9e28e534ea9efdb0b3f878d4ff2dfd269bb47900"
     },
     "internal/adapters/delivery/cli/backfill.go": {
       "mode": "100644",
-      "sha256": "73aefbe4614dcfc18cf25ab9d01da4fbaefe4a9c7b6939c767fe6e13a953d9d1"
+      "sha256": "22e5600899aafab748085d916622ffa1ba4703b81ed5f942c91c63b7b48febc4"
     },
     "internal/adapters/delivery/cli/branch_binding.go": {
       "mode": "100644",
@@ -1383,7 +1383,7 @@
     },
     "internal/adapters/delivery/cli/pre_push_selection.go": {
       "mode": "100644",
-      "sha256": "1092fb417b432e18478de674a9e31b98d6a5a00afbe196ac70244c32e4c5c520"
+      "sha256": "5818f654aa081756d290a492115ad11d7e5d43eeb6ce52d5e5e6de80e59b5b0b"
     },
     "internal/adapters/delivery/cli/pre_push_selection_test.go": {
       "mode": "100644",
@@ -1523,7 +1523,7 @@
     },
     "internal/adapters/delivery/cli/replica_inspection_test.go": {
       "mode": "100644",
-      "sha256": "bc341908226ffc7d89b0e48918806bdbd169abafd565405c735bd17e04e3da48"
+      "sha256": "af4ae6221570ab95e46a9e503f84ab8fcc9db1c69745ed638fcc49eaa6e80de0"
     },
     "internal/adapters/delivery/cli/repository_composition_test.go": {
       "mode": "100644",
@@ -1547,7 +1547,7 @@
     },
     "internal/adapters/delivery/cli/root.go": {
       "mode": "100644",
-      "sha256": "eef0c95e2d80c5b0d0a7b8e32dffb571ad45fc096bbb84e26fdc066e007e1614"
+      "sha256": "3366580a2d90d09b176170f075d3e9587fd4ef03c462665469a4441173fa3bb9"
     },
     "internal/adapters/delivery/cli/root_fsck_test.go": {
       "mode": "100644",
@@ -1647,11 +1647,11 @@
     },
     "internal/adapters/delivery/cli/sync_status.go": {
       "mode": "100644",
-      "sha256": "335452719d716f50ec5ee702eb055db23a9f1f3e38054a470ea9e83f7430e804"
+      "sha256": "55a70615d943b270837c5f70ef5fc3dce155d32cdd356ab63c9557ac7c351bdb"
     },
     "internal/adapters/delivery/cli/sync_status_test.go": {
       "mode": "100644",
-      "sha256": "9511d06e0ef6c5efc7874e042920b705ff8c206e34af133733c240a86732d1ac"
+      "sha256": "c16c13902098a168b44d0535d0b8f3d684e7bb9c7364d8825c5e4a4ef669b5de"
     },
     "internal/adapters/delivery/cli/sync_warning_test.go": {
       "mode": "100644",
@@ -2532,6 +2532,10 @@
     "internal/adapters/storage/frozen_commit_test.go": {
       "mode": "100644",
       "sha256": "448daa3d75acfe9ff9e80091a2bcafdb66eaacbe5b517fbb46c2d2c4f84e0e51"
+    },
+    "internal/adapters/storage/historical_upload_control.go": {
+      "mode": "100644",
+      "sha256": "10370b8d457f1bcbf0306e5a280d366b621d82110313190ff81db40d40efbcd4"
     },
     "internal/adapters/storage/history.go": {
       "mode": "100644",
@@ -3427,7 +3431,11 @@
     },
     "internal/app/sync_backfill.go": {
       "mode": "100644",
-      "sha256": "3d7a364a81d27f0ec6f27636d00cfd2b62dfa3689f8fca5a705947436dc1e5e7"
+      "sha256": "9a0539a636446b3b406ecf55a8eb2b91116543c52a124547d72a114b43b20144"
+    },
+    "internal/app/sync_backfill_pacing_test.go": {
+      "mode": "100644",
+      "sha256": "1e5999b5e06104b3c9f8024725a5e6e628c0816ae6af3738da25b008ade9fc06"
     },
     "internal/app/sync_backfill_test.go": {
       "mode": "100644",
@@ -3615,7 +3623,7 @@
     },
     "internal/app/sync_repo.go": {
       "mode": "100644",
-      "sha256": "a31bec38531ea3a138c4181a90b969020886ba5d8aa7097418ba2b1ad5301e9d"
+      "sha256": "42e9131c2f42cd01ae33e3b1538cbd490343713ccf77cf4b60d03de804f6c3e6"
     },
     "internal/app/sync_retention_test.go": {
       "mode": "100644",
@@ -3747,7 +3755,7 @@
     },
     "internal/domain/backfill.go": {
       "mode": "100644",
-      "sha256": "10b5d4675e2e5d1408c978f4451a44fd8901bc1e66f688a92f8170a7858f0c3f"
+      "sha256": "f1f7833945569e42c0fbf55efbe8b73527498642c22a1cbc3f12cf2a6592565f"
     },
     "internal/domain/branch_context_merge_json.go": {
       "mode": "100644",
@@ -4199,7 +4207,7 @@
     },
     "internal/ports/inbound/backfill.go": {
       "mode": "100644",
-      "sha256": "a7bf080ed8aaa6aab922f0b8c14dd8500d87d66bb8a11771de0c2b98f9ad03f1"
+      "sha256": "9f4c57d8bb51fae59512962752c00b9eee35ac817550eacb2b86b6a306d3307b"
     },
     "internal/ports/inbound/capture_position.go": {
       "mode": "100644",
@@ -4239,7 +4247,7 @@
     },
     "internal/ports/inbound/ports.go": {
       "mode": "100644",
-      "sha256": "b06316b381ab528325ec4ed48c1150b786b06fcf51f283f1c864600e8b091a3b"
+      "sha256": "66b49a595e963a6136ffdf5381e175953b2c7b970129a06ff8edee76a5296c3c"
     },
     "internal/ports/inbound/remote_branch.go": {
       "mode": "100644",
@@ -4267,7 +4275,7 @@
     },
     "internal/ports/outbound/backfill.go": {
       "mode": "100644",
-      "sha256": "899597fce9da363572b084731b6e4a69d411e401aa17e67ea5272eddfc67f8a0"
+      "sha256": "443d895571920d2af54b3c90f9b93b64be632622a0d096b46dc90ec5bfdf005c"
     },
     "internal/ports/outbound/capture_identity.go": {
       "mode": "100644",
@@ -4375,7 +4383,7 @@
     },
     "internal/ports/outbound/replica_inspection.go": {
       "mode": "100644",
-      "sha256": "bd0191ccaae2e5dc5d602b2494c964f9fd7da0a75c70b97c7a0f4724dcafc512"
+      "sha256": "354efefeff2a6bff077c788e4ade619aecc869a7c4e8a32ed8c25fc5cc28e829"
     },
     "internal/ports/outbound/repository_initialization.go": {
       "mode": "100644",
@@ -4474,8 +4482,8 @@
       "sha256": "21754dc51a4623495c92d8b3626577c5a9456b4240a7b9e35fabddfd6629f4e8"
     }
   },
-  "source_commit": "2aa87dbc44d552f9753bdf30bd646ea4ca55b84f",
+  "source_commit": "34df9f611ec585e25e61936ff1735e5195cb7c6d",
   "source_repository": "wnsdy95/cxthub",
-  "source_tree": "80e56a2047378273e87508b4a03063497d6e628b",
+  "source_tree": "90d73ad91b6535eb0b7e33b134fbb781dbee4741",
   "version": 1
 }
