@@ -4486,8 +4486,8 @@
       "sha256": "21754dc51a4623495c92d8b3626577c5a9456b4240a7b9e35fabddfd6629f4e8"
     }
   },
-  "source_commit": "72436fd3e34af02d2529d270f7327ae93c081da8",
+  "source_commit": "523b7bfc257221f6dcf5e42f803167770cc70a96",
   "source_repository": "wnsdy95/cxthub",
-  "source_tree": "dc71548df67a11a01e01c374eb522a485ce182fe",
+  "source_tree": "448e4b282a5f8c40ec22298fe7d11498f1858415",
   "version": 1
 }
